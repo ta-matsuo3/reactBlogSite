@@ -1,17 +1,16 @@
 import bamosList from "./bamosLists"
-import { Children, useState } from "react"
 import Evaluation from "./Evaluation"
 
-export default function BamosList({ children }) {
+export default function BamosList() {
 
 
     const listItem = bamosList.map((article, index) =>
 
-        <li>
+        <li key={`${article.title}-${article.author}`}>
             <img src={article.image} alt={article.author} className="jacketImage" />
             <div className="titleWrap">
                 <p className="title">{`[${article.category}]${article.title}`}</p>
-                <Evaluation up={article.thumbsUp} down={article.thumbsDown} key={index} />
+                <Evaluation up={article.thumbsUp} down={article.thumbsDown} />
             </div>
             <p className="name">{article.author}</p>
         </li>
