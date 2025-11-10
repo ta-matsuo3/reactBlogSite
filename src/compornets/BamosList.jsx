@@ -1,6 +1,6 @@
 import bamosList from "./bamosLists"
 import { Children, useState } from "react"
-import Evaluation from "./evaluation"
+import Evaluation from "./Evaluation"
 
 export default function BamosList({ children }) {
 
