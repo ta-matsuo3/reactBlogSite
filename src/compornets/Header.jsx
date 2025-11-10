@@ -21,10 +21,10 @@ export default function Header() {
         <>
             <nav className={isOpen ? 'drawerMenu active' : 'drawerMenu'}>
                 <ul>
-                    <li><a href="#">MENU-01</a></li>
-                    <li><a href="#">MENU-02</a></li>
-                    <li><a href="#">MENU-03</a></li>
-                    <li><a href="#">MENU-04</a></li>
+                    <li><a href="#" onClick={drawerButton}>MENU-01</a></li>
+                    <li><a href="#" onClick={drawerButton}>MENU-02</a></li>
+                    <li><a href="#" onClick={drawerButton}>MENU-03</a></li>
+                    <li><a href="#" onClick={drawerButton}>MENU-04</a></li>
 
                 </ul>
             </nav>
