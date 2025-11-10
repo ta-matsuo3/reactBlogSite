@@ -1,0 +1,391 @@
+body {
+  max-width: 1000px;
+  margin-inline: auto;
+  position: relative;
+  font-family: "Lexend", sans-serif;
+  /* overflow: hidden; */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------header-------------------------- */
+.drawerMenu {
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  z-index: 10;
+  opacity: 0.8;
+
+  top: -150%;
+
+  transition: 0.5s all ease-out;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+
+    li {
+      a {
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: 600;
+        color: black;
+      }
+    }
+  }
+
+}
+
+.drawerMenu.active {
+  top: 0;
+  right: 0;
+}
+
+.headerArea {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1000px;
+  padding-block: 1rem;
+  position: fixed;
+  z-index: 10000;
+
+  #menuButton {
+    display: flex;
+    background-color: azure;
+
+
+    p {
+      display: block;
+      position: absolute;
+      right: 6px;
+      bottom: 2px;
+      font-size: 12px;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      width: 25px;
+      height: 4px;
+      right: 10px;
+      bottom: 26px;
+      background-color: black;
+      transition: 500ms;
+
+      &:nth-child(1) {
+        transform: rotate(90deg);
+      }
+
+    }
+  }
+
+  img {
+    display: block;
+    margin-inline-start: 1rem;
+    width: 200px;
+  }
+}
+
+#menuButton.active {
+  span {
+    transition: 500ms;
+
+    &:nth-child(1) {
+      transform: rotate(-45deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+  }
+
+}
+
+
+/* ----------------------firstview-------------------------- */
+
+.firstview {
+  position: relative;
+  height: 780px;
+  background-image: url(./assets/images/firstview.jpg);
+  background-size: cover;
+  background-position: 50%;
+  margin-block-end: 3rem;
+
+
+  @media (width >=768px) {
+    height: 370px;
+    background-position: 50% 35%;
+  }
+
+  @media (width >=990px) {
+    height: 612px;
+    background-position: 50% 35%;
+  }
+
+  /* .back {
+
+    object-fit: cover;
+    position: relative;
+
+    @media (width >=990px) {}
+
+  } */
+
+  .logo {
+    width: 250px;
+    background-color: #CD3796;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+/* ----------------------blog-------------------------- */
+
+
+.evaluation {
+  display: flex;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blogList {
+  h1 {
+    text-align: center;
+    padding: 8px;
+    border-block: 1px black solid;
+    margin-block-end: 2rem;
+    margin-inline: 1rem;
+
+  }
+
+  .bamosList {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    list-style: none;
+
+
+    li {
+      .title {
+        font-size: 14px;
+        font-weight: 600;
+
+      }
+
+
+      .name {
+        font-size: 12px;
+        opacity: 0.5;
+      }
+
+      @media (width >=768px) {
+        width: calc(50% - 16*3px);
+      }
+
+      @media (width >=990px) {
+        width: calc(33% - 16*5px);
+      }
+    }
+
+    .jacketImage {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+  }
+}
+
+.feedback {
+  margin-block-start: 3rem;
+
+  h1 {
+    border-block: 1px black solid;
+    padding-block: 8px;
+    margin-inline: 1rem;
+    text-align: center;
+  }
+
+  p {
+    margin: 2rem 1rem;
+  }
+
+
+  button {
+    display: block;
+    color: #fff;
+    background-color: black;
+    padding: 5px 32px;
+    margin-inline: auto;
+    border-radius: 16px;
+    margin-block-end: 3rem;
+    transition: 300ms;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+/* ----------------------------------modal------------------------------------- */
+
+.modal_mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+
+  .modal {
+    position: relative;
+    max-width: 350px;
+    height: auto;
+    margin-inline: auto;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    /* overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; */
+    z-index: 10000;
+
+    @media (width >=768px) {
+      max-width: 600px;
+    }
+
+    .cancelBtn {
+      cursor: pointer;
+
+      .cancel {
+        position: absolute;
+        width: 30px;
+        margin: 6px;
+        right: 0;
+      }
+    }
+
+    .banner {
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-block-end: 1rem;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .form {
+      margin-block-start: 2rem;
+
+      h2 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-block-end: 0.5rem;
+      }
+
+      .radio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 25px;
+
+        div {
+          display: flex;
+          gap: 5px;
+        }
+      }
+
+      select {
+        border: 1px solid black;
+        border-radius: 2px;
+        padding: 5px 8px;
+        cursor: pointer;
+      }
+
+      .checkbox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 30px;
+
+        div {
+          display: flex;
+          gap: 5px
+        }
+      }
+
+      textarea {
+        width: 100%;
+        border: 1px solid black;
+      }
+    }
+
+
+    .modal_main {
+      padding: 1rem;
+    }
+
+    .btn {
+      display: block;
+      color: #fff;
+      background-color: black;
+      text-align: center;
+      border-radius: 1rem;
+      padding: 6px 6rem;
+      margin-block: 2rem;
+      margin-inline: auto;
+      transition: 300ms;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/* -----------------------------------footer---------------------------------------- */
+
+.footerArea {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background-color: black;
+  padding-block: 1rem;
+
+  img {
+    display: block;
+    margin-inline: auto;
+    width: 200px;
+  }
+}
