@@ -1,12 +1,14 @@
+import { useEffect, useRef, useState } from "react";
+
 import bamosList from "./bamosLists"
 import Evaluation from "./Evaluation"
 
 export default function BamosList() {
 
 
-    const listItem = bamosList.map((article, index) =>
+    const listItem = bamosList.map((article) =>
 
-        <li key={`${article.title}-${article.author}`}>
+        <li key={`${article.title}-${article.author}`} className="reveal">
             <img src={article.image} alt={article.author} className="jacketImage" />
             <div className="titleWrap">
                 <p className="title">{`[${article.category}]${article.title}`}</p>
@@ -15,8 +17,6 @@ export default function BamosList() {
             <p className="name">{article.author}</p>
         </li>
     )
-
-    console.log(listItem);
 
 
     return (
@@ -27,10 +27,3 @@ export default function BamosList() {
 
     )
 }
-
-// author: "Liam Johnson",
-// title: "Indie Beats",
-// category: "Music",
-// image: "https://syo-m.github.io/componentsImages/images/indieBeats.webp",
-// thumbsUp: 210,
-// thumbsDown: 9,

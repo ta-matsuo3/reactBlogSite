@@ -1,10 +1,11 @@
+import styles from "./Modal.module.css"
 import { useState } from "react";
 import FormCheckMulti from "./form/FormCheckMulti";
 import FormRadio from "./form/FormRadio";
 import FormSelect from "./form/FormSelect";
 import FormTextarea from "./form/FormTextarea";
-import banner from "../assets/images/snow-fox.jpg"
-import cancel from "../assets/images/cancelBtn.svg"
+import banner from "../../assets/images/snow-fox.jpg"
+import cancel from "../../assets/images/cancelBtn.svg"
 
 export default function Modal({ setIsModal }) {
     // セッタ関数をpropsで渡す
@@ -36,10 +37,10 @@ export default function Modal({ setIsModal }) {
                         <p>Thank you for visiting BAMOS DESIGN. <br />
                             Please take a moment to complete our survey to help us improve our services.
                         </p>
-                        <FormRadio onClick={setIsSend} isSend={isSend} />
+                        <FormRadio setForm={setForm} form={form} />
                         <FormSelect setForm={setForm} form={form} />
-                        <FormCheckMulti onClick={setIsSend} isSend={isSend} />
-                        <FormTextarea onClick={setIsSend} isSend={isSend} />
+                        <FormCheckMulti setForm={setForm} form={form} />
+                        <FormTextarea setForm={setForm} form={form} />
                         <button className="btn" type="button" onClick={handleClick}>SUBMIT</button>
                     </div>
                 </div>

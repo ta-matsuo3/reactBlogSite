@@ -1,27 +1,13 @@
 import { useState } from "react";
-import bamosList from "../bamosLists";
+import bamosList from "../../bamosLists.js";
 
 export default function FormSelect({ setForm, form }) {
-
-
-
     const handleForm = e => {
         setForm({
             ...form,
             [e.target.name]: e.target.value//ここの角かっこ何？
         })
-        // setIsSend(isSend.design = form.design)
     }
-
-    const show = () => {
-        console.log(form.design);
-
-    }
-    // if (setIsSend) {
-    //     console.log(`design：${form.design}`);
-    //     console.log(onClick);
-    // }
-
 
     const listItem = bamosList.map(article =>
         <option value={article.title}>{article.title}</option>

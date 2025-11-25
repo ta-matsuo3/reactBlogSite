@@ -8,15 +8,6 @@ export default function Header() {
         setIsOpen(isOpen ? false : true)
     }
 
-    // メニューリンクをクリックしたら閉じる処理
-    // document.addEventListener("click", (e) => {
-    //     if (e.target.closest(".drawerMenu a")) {
-    //         console.log("リンククリック検知");
-    //         document.querySelector("#menuButton").classList.remove("active");
-    //         document.querySelector(".drawerMenu").classList.remove("active");
-    //     }
-    // });
-
     return (
         <>
             <nav className={isOpen ? 'drawerMenu active' : 'drawerMenu'}>

@@ -7,11 +7,13 @@ import Feedback from './compornets/Feedback'
 import Footer from './compornets/Footer'
 import Header from './compornets/Header'
 import Firstview from './compornets/Firstview'
+import RevealList from './compornets/_commons/RevealList/RevealList'
 
 function App() {
 
   return (
     <>
+      <RevealList />
       <Header />
       <Firstview />
       <BamosList />

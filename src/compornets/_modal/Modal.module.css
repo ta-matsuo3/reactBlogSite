@@ -1,0 +1,123 @@
+.modal_mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+
+    .modal {
+        position: relative;
+        max-width: 350px;
+        height: auto;
+        margin-inline: auto;
+        margin-top: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        /* overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; */
+        z-index: 10000;
+
+        @media (width >=768px) {
+            max-width: 600px;
+        }
+
+        .cancelBtn {
+            cursor: pointer;
+
+            .cancel {
+                position: absolute;
+                width: 30px;
+                margin: 6px;
+                right: 0;
+            }
+        }
+
+        .banner {
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-block-end: 1rem;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .form {
+            margin-block-start: 2rem;
+
+            h2 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-block-end: 0.5rem;
+            }
+
+            .radio {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 5px 25px;
+
+                div {
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+
+            select {
+                border: 1px solid black;
+                border-radius: 2px;
+                padding: 5px 8px;
+                cursor: pointer;
+            }
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 5px 30px;
+
+                div {
+                    display: flex;
+                    gap: 5px
+                }
+            }
+
+            textarea {
+                width: 100%;
+                border: 1px solid black;
+            }
+        }
+
+
+        .modal_main {
+            padding: 1rem;
+        }
+
+        .btn {
+            display: block;
+            color: #fff;
+            background-color: black;
+            text-align: center;
+            border-radius: 1rem;
+            padding: 6px 6rem;
+            margin-block: 2rem;
+            margin-inline: auto;
+            transition: 300ms;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
